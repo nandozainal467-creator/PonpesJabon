@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Formulir Pendaftaran Santri Baru</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:'Poppins',sans-serif;
+  background:#f4f6f8;
+  color:#222;
+}
+
+/* ===== HERO ===== */
+.hero{
+  position:relative;
+  min-height:60vh;
+  background:url('https://raw.githubusercontent.com/NdikzDatabase/Database/main/Database/1758026385324-cd8zcr.jpg') center/cover no-repeat;
+}
+.hero::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:rgba(0,80,90,.78);
+}
+.hero-content{position:relative;z-index:2;text-align:center;padding:40px 20px;color:#fff;}
+.hero h1{margin:10px 0 5px;font-size:28px;}
+.hero p{font-size:14px;opacity:.9;}
+.hero .logo{width:90px;height:90px;border-radius:50%;background:#fff;margin:20px auto 15px;display:flex;align-items:center;justify-content:center;}
+.hero .logo img{width:130%;}
+.social{display:flex;justify-content:center;gap:12px;margin:20px 0;}
+.social a{width:38px;height:38px;border-radius:50%;background:#fff;color:#0a6c6a;display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:16px;}
+.container{max-width:700px;margin:20px auto 40px;padding:0 16px;}
+.card{background:#fff;border-radius:20px;padding:25px;box-shadow:0 10px 40px rgba(0,0,0,.1);color:#222;}
+h2{text-align:center;margin-bottom:20px;color:#0a6c6a;}
+fieldset{border:1px solid rgba(10,108,106,.3);border-radius:15px;padding:15px;margin-bottom:20px;}
+legend{padding:0 10px;color:#0a6c6a;font-weight:500;}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;}
+label{font-size:14px;opacity:.85;}
+input,select,textarea{width:100%;padding:10px;border-radius:10px;border:1px solid rgba(0,0,0,.2);margin-top:4px;}
+textarea{resize:vertical;}
+.file{background:rgba(0,0,0,.05);padding:10px;border-radius:10px;}
+button{width:100%;padding:15px;border:none;border-radius:40px;font-size:16px;font-weight:600;background:#0a6c6a;color:#fff;cursor:pointer;margin-top:10px;}
+button:hover{filter:brightness(1.1)}
+.note{font-size:13px;opacity:.7;margin-top:10px}
+
+/* LOADING */
+#loading{position:fixed;inset:0;background:rgba(0,0,0,.45);backdrop-filter:blur(8px);display:none;align-items:center;justify-content:center;z-index:10000;}
+.loading-box{background:#fff;border-radius:25px;padding:35px 30px;text-align:center;width:260px;box-shadow:0 20px 50px rgba(0,0,0,.25);animation:pop .4s ease;}
+.loading-ring{width:60px;height:60px;border:6px solid #e0f2f1;border-top:6px solid #0a6c6a;border-radius:50%;margin:0 auto 15px;animation:spin 1s linear infinite;}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes pop{from{transform:scale(.8);opacity:0}to{transform:scale(1);opacity:1}}
+
+/* TOAST */
+.toast{position:fixed;top:25px;left:50%;transform:translateX(-50%) translateY(-20px);background:#fff;border-radius:14px;padding:14px 18px;min-width:260px;display:flex;gap:10px;align-items:center;box-shadow:0 15px 40px rgba(0,0,0,.2);opacity:0;pointer-events:none;transition:.4s;z-index:10001;}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+.toast.success{border-left:6px solid #4BB543}
+.toast.error{border-left:6px solid #FF4136}
+</style>
+</head>
+
+<body>
+
+<section class="hero">
+  <div class="hero-content">
+    <div class="logo">
+      <img src="https://h.top4top.io/p_36573a8sf1.png">
+    </div>
+    <h1>@pondokjabon</h1>
+    <p>Pp. Hidayatul Mubtadi'in Jabon<br>Ds. Jabon Ds. Drenges Kec. Kertosono Kab. Nganjuk</p>
+    <div class="social">
+      <a href="https://www.instagram.com/pondokjabon/?utm_source=ig_web_button_share_sheet"><i class="fab fa-instagram"></i></a>
+      <a href="https://youtube.com/@pondokjabon?si=MSandmZfBIFx_TnD"><i class="fab fa-youtube"></i></a>
+      <a href="https://www.facebook.com/pondokjabon"><i class="fab fa-facebook"></i></a>
+      <a href="https://www.tiktok.com/@pondokjabon?_r=1&_t=ZS-92sv5CIMRzp"><i class="fab fa-tiktok"></i></a>
+      <a href="https://whatsapp.com/channel/0029Vad8yVnHbFVCXNSoRm2h"><i class="fab fa-whatsapp"></i></a>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+<div class="card">
+<h2>Formulir Pendaftaran Santri Baru</h2>
+
+<form onsubmit="kirim();return false">
+
+<!-- DATA PRIBADI -->
+<fieldset>
+<legend>Data Pribadi Santri</legend>
+<div class="grid">
+<div>
+<label>Nama Lengkap</label>
+<input id="nama" required>
+</div>
+<div>
+<label>NIK (16 Digit)</label>
+<input id="nik" maxlength="16" required>
+</div>
+<div>
+<label>Jenis Kelamin</label>
+<select id="jk">
+<option value="Laki-laki">Laki-laki</option>
+<option value="Perempuan">Perempuan</option>
+</select>
+</div>
+<div>
+<label>Agama</label>
+<select id="agama">
+<option value="Islam">Islam</option>
+<option value="Kristen">Kristen</option>
+<option value="Katolik">Katolik</option>
+<option value="Hindu">Hindu</option>
+<option value="Buddha">Buddha</option>
+<option value="Konghucu">Konghucu</option>
+</select>
+</div>
+<div>
+<label>Anak ke-</label>
+<input type="number" id="anak_ke" min="1">
+</div>
+<div>
+<label>Jumlah Saudara</label>
+<input type="number" id="jumlah_saudara" min="0">
+</div>
+</div>
+</fieldset>
+
+<!-- KELAHIRAN -->
+<fieldset>
+<legend>Data Kelahiran</legend>
+<div class="grid">
+<div>
+<label>Tempat Lahir</label>
+<input id="tempat">
+</div>
+<div>
+<label>Tanggal Lahir</label>
+<input type="date" id="tgl">
+</div>
+<div>
+<label>Berat Lahir (kg)</label>
+<input type="number" step="0.1" id="berat_lahir">
+</div>
+<div>
+<label>Tinggi Badan (cm)</label>
+<input type="number" step="0.1" id="tinggi_badan">
+</div>
+</div>
+</fieldset>
+
+<!-- ORANG TUA / WALI -->
+<fieldset>
+<legend>Data Orang Tua / Wali</legend>
+<div class="grid">
+<div>
+<label>Nama Ayah</label>
+<input id="ayah">
+</div>
+<div>
+<label>Pekerjaan Ayah</label>
+<input id="kerja_ayah">
+</div>
+<div>
+<label>Nama Ibu</label>
+<input id="ibu">
+</div>
+<div>
+<label>Pekerjaan Ibu</label>
+<input id="kerja_ibu">
+</div>
+<div>
+<label>Nama Wali (jika ada)</label>
+<input id="wali">
+</div>
+<div>
+<label>Hubungan dengan Wali</label>
+<input id="hub_wali">
+</div>
+</div>
+</fieldset>
+
+<!-- ALAMAT -->
+<fieldset>
+<legend>Alamat Lengkap</legend>
+<div class="grid">
+<div>
+<label>Alamat Jalan</label>
+<input id="alamat">
+</div>
+<div>
+<label>Desa / Kelurahan</label>
+<input id="desa">
+</div>
+<div>
+<label>Kecamatan</label>
+<input id="kecamatan">
+</div>
+<div>
+<label>Kabupaten / Kota</label>
+<input id="kabupaten">
+</div>
+<div>
+<label>Provinsi</label>
+<input id="provinsi">
+</div>
+<div>
+<label>Kode Pos</label>
+<input id="kodepos">
+</div>
+</div>
+</fieldset>
+
+<!-- KONTAK -->
+<fieldset>
+<legend>Kontak</legend>
+<div class="grid">
+<div>
+<label>Nomor WhatsApp Aktif</label>
+<input id="hp">
+</div>
+<div>
+<label>Email</label>
+<input type="email" id="email">
+</div>
+</div>
+</fieldset>
+
+<!-- PENDIDIKAN SEBELUMNYA -->
+<fieldset>
+<legend>Pendidikan Sebelumnya</legend>
+<div class="grid">
+<div>
+<label>Asal Sekolah / Madrasah</label>
+<input id="asal_sekolah">
+</div>
+<div>
+<label>Tahun Lulus</label>
+<input type="number" id="tahun_lulus" min="1900" max="2100">
+</div>
+<div>
+<label>Ijazah / SKHUN</label>
+<input type="text" id="no_ijazah">
+</div>
+</div>
+</fieldset>
+
+<!-- KESEHATAN -->
+<fieldset>
+<legend>Data Kesehatan</legend>
+<div class="grid">
+<div>
+<label>Golongan Darah</label>
+<select id="gol_darah">
+<option value="A">A</option>
+<option value="B">B</option>
+<option value="AB">AB</option>
+<option value="O">O</option>
+</select>
+</div>
+<div>
+<label>Riwayat Penyakit</label>
+<textarea id="penyakit" rows="2"></textarea>
+</div>
+<div>
+<label>Kelainan / Alergi</label>
+<textarea id="alergi" rows="2"></textarea>
+</div>
+</div>
+</fieldset>
+
+<!-- PILIHAN KELAS / PROGRAM -->
+<fieldset>
+<legend>Pilihan Program / Kelas</legend>
+<div class="grid">
+<div>
+<label>Program</label>
+<select id="program">
+<option value="Tsanawiyah">Tsanawiyah (SMP)</option>
+<option value="Aliyah">Aliyah (SMA)</option>
+<option value="Tahfidz">Tahfidz Quran</option>
+<option value="Kitab">Kitab Kuning</option>
+</select>
+</div>
+<div>
+<label>Semester Masuk</label>
+<select id="semester">
+<option value="Gasal">Gasal</option>
+<option value="Genap">Genap</option>
+</select>
+</div>
+<div>
+<label>Tahun Masuk</label>
+<input type="number" id="tahun_masuk" min="2000" max="2100">
+</div>
+</div>
+</fieldset>
+
+<!-- HOBI / KETAMBAHAN -->
+<fieldset>
+<legend>Hobi / Keterangan Tambahan</legend>
+<div class="grid">
+<div>
+<label>Hobi</label>
+<textarea id="hobi" rows="2"></textarea>
+</div>
+<div>
+<label>Keterangan Lain</label>
+<textarea id="keterangan" rows="2"></textarea>
+</div>
+</div>
+</fieldset>
+
+<!-- DOKUMEN -->
+<fieldset>
+<legend>Upload Dokumen Wajib (PDF)</legend>
+<div class="grid">
+<div class="file"><label>Pas Foto</label><input type="file" id="foto" accept="application/pdf" required></div>
+<div class="file"><label>Kartu Keluarga</label><input type="file" id="kk" accept="application/pdf" required></div>
+<div class="file"><label>Akta Kelahiran</label><input type="file" id="akta" accept="application/pdf" required></div>
+<div class="file"><label>Ijazah Terakhir</label><input type="file" id="ijazah" accept="application/pdf" required></div>
+</div>
+</fieldset>
+
+<p class="note">Saya menyatakan bahwa seluruh data yang saya isikan adalah benar dan dapat dipertanggungjawabkan.</p>
+
+
+<button type="submit">KIRIM PENDAFTARAN</button>
+</form>
+</div>
+</div>
+
+<div id="loading">
+  <div class="loading-box">
+    <div class="loading-ring"></div>
+    <h3>Mengirim Data</h3>
+    <p>Mohon tunggu sebentar…</p>
+  </div>
+</div>
+
+<div id="toast" class="toast"></div>
+
+<script>
+const URL="https://script.google.com/macros/s/AKfycbzdiaIQJtHyp-FPBMJSkV2HuNofJILQDmbBSGaR_XHTvFYsmNGDpaqNCBq9kn44dk6MPw/exec";
+const loading=document.getElementById('loading');
+const toast=document.getElementById('toast');
+
+const toBase64=f=>new Promise(r=>{
+const fr=new FileReader();
+fr.onload=()=>r(fr.result.split(',')[1]);
+fr.readAsDataURL(f);
+});
+
+function showToast(msg,type){
+toast.className=`toast show ${type}`;
+toast.innerHTML=`<i class="fa ${type=='success'?'fa-circle-check':'fa-circle-xmark'}"></i><span>${msg}</span>`;
+setTimeout(()=>toast.className='toast',4000);
+}
+
+async function kirim(){
+if(nik.value.length!==16){showToast("NIK harus 16 digit","error");return;}
+loading.style.display="flex";
+try{
+const data={
+nama:nama.value,nik:nik.value,jk:jk.value,agama:agama.value,
+anak_ke:anak_ke.value,jumlah_saudara:jumlah_saudara.value,
+tempat:tempat.value,tgl:tgl.value,
+berat_lahir:berat_lahir.value,tinggi_badan:tinggi_badan.value,
+ayah:ayah.value,kerja_ayah:kerja_ayah.value,
+ibu:ibu.value,kerja_ibu:kerja_ibu.value,
+wali:wali.value,hub_wali:hub_wali.value,
+alamat:alamat.value,desa:desa.value,kecamatan:kecamatan.value,
+kabupaten:kabupaten.value,provinsi:provinsi.value,kodepos:kodepos.value,
+hp:hp.value,email:email.value,
+asal_sekolah:asal_sekolah.value,tahun_lulus:tahun_lulus.value,
+no_ijazah:no_ijazah.value,
+gol_darah:gol_darah.value,penyakit:penyakit.value,alergi:alergi.value,
+program:program.value,semester:semester.value,tahun_masuk:tahun_masuk.value,
+hobi:hobi.value,keterangan:keterangan.value,
+foto:await toBase64(foto.files[0]),
+kk:await toBase64(kk.files[0]),
+akta:await toBase64(akta.files[0]),
+ijazah:await toBase64(ijazah.files[0])
+};
+const r=await fetch(URL,{method:"POST",body:new URLSearchParams(data)});
+const t=await r.text();
+if(t=="OK")showToast("Pendaftaran berhasil","success");
+else if(t=="NIK_DUPLIKAT")showToast("NIK sudah terdaftar","error");
+else showToast("Server error: "+t,"error");
+}catch(e){showToast(e.message,"error")}
+finally{loading.style.display="none";}
+}
+</script>
+
+</body>
+</html>
