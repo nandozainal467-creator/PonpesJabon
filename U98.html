@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Profil Pondok Jabon</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:'Poppins',sans-serif;
+  background:#f4f6f8;
+  color:#222;
+}
+
+/* ===== HERO ===== */
+.hero{
+  position:relative;
+  min-height:60vh;
+  background:url('https://raw.githubusercontent.com/NdikzDatabase/Database/main/Database/1758026385324-cd8zcr.jpg') center/cover no-repeat;
+}
+.hero::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:rgba(0,80,90,.78);
+}
+.hero-content{
+  position:relative;
+  z-index:2;
+  text-align:center;
+  padding:40px 20px;
+  color:#fff;
+}
+.logo{
+  width:110px;
+  height:110px;
+  border-radius:50%;
+  background:#fff;
+  margin:30px auto 15px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.logo img{
+  width:130%;
+}
+.hero h1{
+  margin:10px 0 5px;
+  font-size:28px;
+}
+.hero p{
+  font-size:14px;
+  opacity:.9;
+}
+
+/* ===== SOCIAL ===== */
+.social{
+  display:flex;
+  justify-content:center;
+  gap:15px;
+  margin:25px 0;
+}
+.social a{
+  width:42px;
+  height:42px;
+  border-radius:50%;
+  background:#fff;
+  color:#0a6c6a;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-decoration:none;
+  font-size:18px;
+}
+
+/* ===== PROFILE ===== */
+.profile-section{
+  max-width:900px;
+  margin:50px auto;
+  padding:0 20px;
+}
+.profile-card{
+  display:flex;
+  align-items:center;
+  gap:25px;
+  background:#fff;
+  border-radius:20px;
+  padding:20px;
+  box-shadow:0 5px 15px rgba(0,0,0,0.1);
+  margin-bottom:40px;
+}
+.profile-card img{
+  width:150px;
+  height:150px;
+  object-fit:cover;
+  border-radius:50%;
+  border:4px solid #4aa59f;
+}
+.profile-card div h2{
+  margin-bottom:10px;
+  color:#0a6c6a;
+}
+.profile-card div p{
+  font-size:14px;
+  color:#333;
+}
+
+/* ===== INFO ===== */
+.info-section{
+  background:#0a6c6a;
+  color:#fff;
+  padding:40px 20px;
+}
+.info-section h2{
+  text-align:center;
+  margin-bottom:30px;
+}
+
+/* Subsections */
+.subsection{
+  margin-bottom:40px;
+}
+.subsection h3{
+  margin-bottom:15px;
+  color:#fff;
+  border-bottom:2px solid #4aa59f;
+  display:inline-block;
+  padding-bottom:5px;
+}
+.subsection p, .subsection ul{
+  color:#e0f7f7;
+  line-height:1.6;
+}
+.subsection ul{
+  padding-left:20px;
+  list-style:disc;
+}
+
+/* Struktur Kepengurusan */
+.structure-table{
+  width:100%;
+  border-collapse:collapse;
+}
+.structure-table th, .structure-table td{
+  border:1px solid #ddd;
+  padding:12px;
+  text-align:left;
+}
+.structure-table th{
+  background:#4aa59f;
+  color:#fff;
+}
+
+/* ===== FOOTER ===== */
+footer{
+  text-align:center;
+  padding:25px;
+  font-size:13px;
+  color:#777;
+}
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="logo">
+      <img src="https://h.top4top.io/p_36573a8sf1.png">
+    </div>
+
+    <h1>@pondokjabon</h1>
+    <p>Pp. Hidayatul Mubtadi'in Jabon<br>
+    Ds. Jabon Ds. Drenges Kec. Kertosono Kab. Nganjuk</p>
+
+   <div class="social">
+      <a href="https://www.instagram.com/pondokjabon/?utm_source=ig_web_button_share_sheet"><i class="fab fa-instagram"></i></a>
+      <a href="https://youtube.com/@pondokjabon?si=MSandmZfBIFx_TnD"><i class="fab fa-youtube"></i></a>
+      <a href="https://www.facebook.com/pondokjabon"><i class="fab fa-facebook"></i></a>
+      <a href="https://www.tiktok.com/@pondokjabon?_r=1&_t=ZS-92sv5CIMRzp"><i class="fab fa-tiktok"></i></a>
+      <a href="https://whatsapp.com/channel/0029Vad8yVnHbFVCXNSoRm2h"><i class="fab fa-whatsapp"></i></a>
+    </div>
+
+  </div>
+</section>
+
+<!-- PROFILE PENGASUH -->
+<section class="profile-section">
+  <div class="profile-card">
+    <img src="77.jpg" alt="Pengasuh Pondok">
+    <div>
+      <h2>KH. Abdul Ghofur</h2>
+      <p>Pengasuh Pondok Jabon yang berdedikasi tinggi dalam pendidikan agama dan pengembangan karakter santri.</p>
+    </div>
+  </div>
+</section>
+
+<!-- INFO -->
+<section class="info-section">
+  <h2>Pondok Pesantren Hidayatul Mubtadi'in</h2>
+
+  <!-- Tentang Pondok -->
+  <div class="subsection">
+    <h3>Tentang Pondok</h3>
+    <p>PonPes Hidayatul Mubtadi'in adalah lembaga pendidikan berbasis pesantren yang mengutamakan pendidikan agama Islam serta pengembangan karakter santri. Dengan lingkungan yang nyaman dan fasilitas lengkap, pondok ini menjadi tempat ideal untuk belajar ilmu agama maupun pendidikan umum.</p>
+  </div>
+
+  <!-- Visi & Misi -->
+  <div class="subsection">
+    <h3>Visi & Misi</h3>
+    <p><strong>Visi:</strong> Menjadi pondok pesantren unggul yang mencetak generasi Islami berakhlak mulia dan berprestasi.</p>
+    <p><strong>Misi:</strong></p>
+    <ul>
+      <li>Menyediakan pendidikan agama berkualitas, menyenangkan dan tentunya nyaman.</li>
+      <li>Mengembangkan potensi akademik dan non-akademik santri.</li>
+      <li>Membentuk karakter santri berakhlak mulia, disiplin, dan mandiri.</li>
+      <li>Menyediakan fasilitas lengkap untuk mendukung kegiatan belajar dan ibadah.</li>
+    </ul>
+  </div>
+
+  <!-- Fasilitas -->
+  <div class="subsection">
+    <h3>Fasilitas</h3>
+    <ul>
+      <li>Asrama nyaman dan aman</li>
+      <li>Masjid dan ruang ibadah</li>
+      <li>Perpustakaan</li>
+      <li>Ruang belajar</li>
+      <li>Lapangan olahraga</li>
+      <li>Laboratorium komputer dan sains</li>
+      <li>Ruang kreatif dan seni</li>
+    </ul>
+  </div>
+
+  <!-- Struktur Kepengurusan -->
+  <div class="subsection">
+    <h3>Struktur Kepengurusan</h3>
+    <table class="structure-table">
+      <tr>
+        <th>Jabatan</th>
+        <th>Nama</th>
+      </tr>
+      <tr>
+        <td>Pengasuh</td>
+        <td>KH. Abdul Ghofur</td>
+      </tr>
+      <tr>
+        <td>Ketua Pondok</td>
+        <td>Ust. Hasan</td>
+      </tr>
+      <tr>
+        <td>Bendahara</td>
+        <td>Ust. Anam</td>
+      </tr>
+      <tr>
+        <td>Sekretaris</td>
+        <td>Ust. Jamal</td>
+      </tr>
+      <tr>
+        <td>Koordinator Kegiatan</td>
+        <td>Ust. Haidier</td>
+      </tr>
+      <tr>
+        <td>Keamanan</td>
+        <td>Ust. Harun</td>
+      </tr>
+    </table>
+  </div>
+
+</section>
+
+<footer>
+  made with ❤️ | Pondok Jabon
+</footer>
+
+</body>
+</html>

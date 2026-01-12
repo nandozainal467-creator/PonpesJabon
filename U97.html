@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Dokumentasi Pondok Jabon</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:'Poppins',sans-serif;
+  background:#f4f6f8;
+  color:#222;
+}
+
+/* ===== HERO ===== */
+.hero{
+  position:relative;
+  min-height:60vh;
+  background:url('https://raw.githubusercontent.com/NdikzDatabase/Database/main/Database/1758026385324-cd8zcr.jpg') center/cover no-repeat;
+}
+.hero::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:rgba(0,80,90,.78);
+}
+.hero-content{
+  position:relative;
+  z-index:2;
+  text-align:center;
+  padding:40px 20px;
+  color:#fff;
+}
+.logo{
+  width:110px;
+  height:110px;
+  border-radius:50%;
+  background:#fff;
+  margin:30px auto 15px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.logo img{width:130%}
+.hero h1{margin:10px 0 5px;font-size:28px}
+.hero p{font-size:14px;opacity:.9}
+
+/* ===== SOCIAL ===== */
+.social{
+  display:flex;
+  justify-content:center;
+  gap:15px;
+  margin:25px 0;
+}
+.social a{
+  width:42px;
+  height:42px;
+  border-radius:50%;
+  background:#fff;
+  color:#0a6c6a;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-decoration:none;
+  font-size:18px;
+}
+
+/* ===== SECTIONS ===== */
+.section{padding:40px 20px}
+.section h2{text-align:center;margin-bottom:30px;color:#0a6c6a}
+
+/* ===== GALLERY SCROLL ===== */
+.gallery{
+  display:flex;
+  gap:18px;
+  overflow-x:auto;
+  scroll-snap-type:x mandatory;
+  padding-bottom:10px;
+}
+.gallery::-webkit-scrollbar{height:6px}
+.gallery::-webkit-scrollbar-thumb{
+  background:#ccc;
+  border-radius:10px;
+}
+
+.gallery-item{
+  min-width:260px;
+  background:#fff;
+  border-radius:15px;
+  overflow:hidden;
+  box-shadow:0 4px 12px rgba(0,0,0,.1);
+  scroll-snap-align:start;
+  cursor:pointer;
+}
+.gallery-item img,
+.gallery-item iframe{
+  width:100%;
+  display:block;
+}
+.gallery-item p{
+  padding:10px;
+  font-size:14px;
+  text-align:center;
+}
+
+/* ===== ZOOM MODAL ===== */
+#zoom{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.85);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  z-index:999;
+}
+#zoom img{
+  max-width:90%;
+  max-height:90%;
+  border-radius:15px;
+}
+#zoom span{
+  position:absolute;
+  top:20px;
+  right:30px;
+  font-size:32px;
+  color:#fff;
+  cursor:pointer;
+}
+
+/* ===== FOOTER ===== */
+footer{
+  text-align:center;
+  padding:25px;
+  font-size:13px;
+  color:#777;
+}
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="logo">
+      <img src="https://h.top4top.io/p_36573a8sf1.png">
+    </div>
+    <h1>@pondokjabon</h1>
+    <p>Pp. Hidayatul Mubtadi'in Jabon<br>
+    Ds. Jabon Ds. Drenges Kec. Kertosono Kab. Nganjuk</p>
+
+    <div class="social">
+      <a href="https://www.instagram.com/pondokjabon/?utm_source=ig_web_button_share_sheet"><i class="fab fa-instagram"></i></a>
+      <a href="https://youtube.com/@pondokjabon?si=MSandmZfBIFx_TnD"><i class="fab fa-youtube"></i></a>
+      <a href="https://www.facebook.com/pondokjabon"><i class="fab fa-facebook"></i></a>
+      <a href="https://www.tiktok.com/@pondokjabon?_r=1&_t=ZS-92sv5CIMRzp"><i class="fab fa-tiktok"></i></a>
+      <a href="https://whatsapp.com/channel/0029Vad8yVnHbFVCXNSoRm2h"><i class="fab fa-whatsapp"></i></a>
+    </div>
+  </div>
+</section>
+
+<!-- DOKUMENTASI FOTO -->
+<section class="section">
+  <h2>Dokumentasi Foto</h2>
+  <div class="gallery">
+    <div class="gallery-item"><img src="huhu.jpg" onclick="zoom(this.src)"><p>Kegiatan MalJum Alberjanji</p></div>
+    <div class="gallery-item"><img src="tg.jpg" onclick="zoom(this.src)"><p>Tasyakuran</p></div>
+    <div class="gallery-item"><img src="haha.jpg" onclick="zoom(this.src)"><p>Acara Sholawat Bersama</p></div>
+    <div class="gallery-item"><img src="fto09.png" onclick="zoom(this.src)"><p>Santri Belajar</p></div>
+    <div class="gallery-item"><img src="tg.jpg" onclick="zoom(this.src)"><p>Acara Pekan Kreatif</p></div>
+    <div class="gallery-item"><img src="ko.jpg" onclick="zoom(this.src)"><p>Outing Santri</p></div>
+    <div class="gallery-item"><img src="o.jpg" onclick="zoom(this.src)"><p>Latihan Olahraga</p></div>
+    <div class="gallery-item"><img src="p.jpg" onclick="zoom(this.src)"><p>Pentas Seni</p></div>
+  </div>
+</section>
+
+<!-- DOKUMENTASI VIDEO -->
+<section class="section">
+  <h2>Dokumentasi Video</h2>
+  <div class="gallery">
+    <div class="gallery-item">
+      <iframe height="200" src="https://www.youtube.com/embed/AF26qI5W-bY" allowfullscreen></iframe>
+      <p>Film Pendek PPHM</p>
+    </div>
+    <div class="gallery-item">
+      <iframe height="200" src="https://www.youtube.com/embed/yzqJT6uuORI" allowfullscreen></iframe>
+      <p>Lalaran Alfiyah Ibnu Malik</p>
+    </div>
+    <div class="gallery-item">
+      <iframe height="200" src="https://youtu.be/j54TOOpLgVo?si=oCBHb32suHctVsZG" allowfullscreen></iframe>
+      <p>Murottal Surah An Naba</p>
+    </div>
+    <div class="gallery-item">
+      <iframe height="200" src="https://youtu.be/sq_Ctg_7ESE?si=m3I4C1B8O3flCLqE" allowfullscreen></iframe>
+      <p>Memperingati Satu Muharram</p>
+    </div>
+  </div>
+</section>
+
+<!-- DOKUMENTASI PDF -->
+<section class="section">
+  <h2>Dokumentasi PDF</h2>
+  <div class="gallery">
+    <div class="gallery-item"><img src="fto02.jpg" onclick="zoom(this.src)"><p>Laporan Tahunan 2023</p></div>
+    <div class="gallery-item"><img src="fto02.jpg" onclick="zoom(this.src)"><p>Agenda Kegiatan Santri</p></div>
+    <div class="gallery-item"><img src="fto02.jpg" onclick="zoom(this.src)"><p>Daftar Prestasi</p></div>
+    <div class="gallery-item"><img src="fto02.jpg" onclick="zoom(this.src)"><p>Dokumentasi Administrasi</p></div>
+    <div class="gallery-item"><img src="fto02.jpg" onclick="zoom(this.src)"><p>Proposal Acara</p></div>
+  </div>
+</section>
+
+<footer>made with ❤️ | Pondok Jabon</footer>
+
+<!-- ZOOM -->
+<div id="zoom">
+  <span onclick="closeZoom()">&times;</span>
+  <img id="zoomImg">
+</div>
+
+<script>
+function zoom(src){
+  document.getElementById('zoom').style.display='flex';
+  document.getElementById('zoomImg').src=src;
+}
+function closeZoom(){
+  document.getElementById('zoom').style.display='none';
+}
+</script>
+
+</body>
+</html>
